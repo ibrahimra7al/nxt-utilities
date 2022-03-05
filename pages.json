@@ -1,0 +1,19 @@
+{
+    "pages": [
+        {
+            "name": "",
+            "path": "",
+            "dropzone": ""
+        }
+    ],
+    "dropzonesPlaces": [{
+        "dropzoneName": "",
+        "positions": 0,
+        "widget": {
+            "id": "",
+            "name": "",
+            "date": ""
+        }
+    }
+]
+}
