@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Loadable from 'react-loadable';
+import { preloadReady } from '@react-loadable/revised'; 
 import App from '../core/pages';
 import { DropzoneDataProvider } from '../providers/dropzone-data';
 import { WidgetDataProvider } from '../providers/widget-data';
@@ -11,7 +11,7 @@ const pagesData = window.__PAGES_DATA__;
 const dropzonesData = window.__DROPZONES_DATA__;
 
 export default () => {
-  Loadable.preloadReady().then(() => {
+  preloadReady().then(() => {
     ReactDOM.hydrate(
       <DropzoneDataProvider value={dropzonesData}>
         <WidgetDataProvider value={serverData}>
