@@ -3,17 +3,30 @@
         {
             "name": "",
             "path": "",
-            "dropzone": ""
+            "dropzone": "page-1"
+        },
+        {
+            "name": "",
+            "path": "",
+            "dropzone": "page-1"
+        },
+        {
+            "name": "",
+            "path": "",
+            "dropzone": "page-1"
         }
     ],
     "dropzonesPlaces": [{
-        "dropzoneName": "",
+        "dropzoneName": "page-1",
         "positions": 0,
         "widget": {
-            "id": "",
-            "name": "",
-            "date": ""
+            "id": "sadasdasdasdwqdqw",
+            "name": "multi-search",
+            "data": "https://asdasdasdsad",
+            "flavor": "",
+            "variation": ""
         }
     }
-]
+],
+    "boilerplate": false
 }
