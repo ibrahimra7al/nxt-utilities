@@ -1,6 +1,9 @@
 import React, { PropsWithChildren, useContext, useMemo } from 'react';
+import { WidgetData } from '../types/widgetData';
 
-const ServerDataContext = React.createContext(null);
+const ServerDataContext = React.createContext<{ data: WidgetData[] }>({
+  data: []
+});
 
 export const WidgetDataProvider = (
   props: PropsWithChildren<{ value: any }>

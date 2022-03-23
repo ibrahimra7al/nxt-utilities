@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default (p) => <WebpackNXTDynamicWidget p={p} />;
+export default (p: any) => <WebpackNXTDynamicWidget p={p} />;

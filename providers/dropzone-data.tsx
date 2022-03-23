@@ -1,6 +1,9 @@
 import React, { PropsWithChildren, useContext, useMemo } from 'react';
+import { DropzonePlace } from '../types/dropzonePlace';
 
-const DropzoneDataContext = React.createContext(null);
+const DropzoneDataContext = React.createContext<{ data: DropzonePlace[] }>({
+  data: []
+});
 
 export const DropzoneDataProvider = (
   props: PropsWithChildren<{ value: any }>
@@ -17,22 +20,8 @@ export const DropzoneDataProvider = (
     </DropzoneDataContext.Provider>
   );
 };
-type dropzoneData = Array<{
-  name: string;
-  data: string;
-  id: string;
-}>;
-type dropzoneContextData = Array<{
-  dropzoneName: string;
-  positions: number;
-  widget: {
-    id: string;
-    name: string;
-    data: string;
-  };
-}>;
 
-export const useDropzoneData = (name: string): dropzoneData => {
+export const useDropzoneData = (name: string): DropzonePlace['widget'][] => {
   const context = useContext(DropzoneDataContext);
 
   if (!context) {
@@ -40,10 +29,10 @@ export const useDropzoneData = (name: string): dropzoneData => {
       'useDropzoneData() must be a child of <DropzoneDataContext />'
     );
   }
-  const data: dropzoneContextData = context.data;
+  const data: DropzonePlace[] = context.data;
 
   return data
     .filter((d) => d.dropzoneName === name)
-    .sort((d1, d2) => d1.positions - d2.positions)
-    .map((d) => d.widget);
+    .sort((d1, d2) => d1.position - d2.position)
+    .map((d) => ({ ...d.widget, dropzone: d.dropzoneName }));
 };

@@ -1,13 +1,15 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes as Switch, Route } from 'react-router-dom';
+import { Page as PageType } from '../types/page';
 import Page from './page';
 
-export default (pages) => {
+export default (props: { pages: PageType[] }) => {
+  const { pages } = props;
   return (
     <Switch>
-      {pages.map((p) => {
+      {pages.map((p: PageType) => {
         return (
-          <Route exact path={pages.path}>
+          <Route path={p.path}>
             <Page page={p} />
           </Route>
         );
