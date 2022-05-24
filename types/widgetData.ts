@@ -1,5 +1,7 @@
 export interface WidgetData {
     id: string;
-    url: string;
+    name: string;
     data: string;
+    variant: string;
+    flavor: string;
 }
