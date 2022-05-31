@@ -17,7 +17,7 @@ export default () => {
       <DropzoneDataProvider value={dropzonesData}>
         <WidgetDataProvider value={serverData}>
           <BrowserRouter>
-            <App pages={pagesData} />
+            <App pages={pagesData}/>
           </BrowserRouter>
         </WidgetDataProvider>
       </DropzoneDataProvider>,
