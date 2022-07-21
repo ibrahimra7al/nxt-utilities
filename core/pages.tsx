@@ -5,13 +5,14 @@ import Page from './page';
 
 export default (props: { pages: PageType[] }) => {
   const { pages } = props;
+  if (!pages || !pages.length) {
+      return <h1>Error Rendering widget!</h1>;
+  }
   return (
     <Switch>
-      {pages.map((p: PageType) => {
+      {pages.map((p: PageType, key:number) => {
         return (
-          <Route path={p.path}>
-            <Page page={p} />
-          </Route>
+          <Route path={p.path} element={<Page page={p}/>} key={key}/>
         );
       })}
     </Switch>

@@ -7,8 +7,8 @@ export default ({ name}: { name: string}) => {
   if (dropzoneData)
     return (
       <>
-        {dropzoneData.map((d) => {
-          return <DynamicWidget name={d.name} variant={d.variant} flavor={d.flavor} />;
+        {dropzoneData.map((d, key) => {
+          return <DynamicWidget name={d.name} variant={d.variant} flavor={d.flavor} key={key} />;
         })}
       </>
     );
